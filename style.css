@@ -1,0 +1,475 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", Lalezar, cursive, sans-serif;
+    }
+
+    body {
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+    min-height: 100vh;
+    background: #645e69;
+    /* background-image: linear-gradient(rgba(4,9,30,0.7),rgba(5, 13, 46, 0.7)),url(web_bg.jpg); */
+    background-image:url(hack_web_bg.png);
+    background-size:contain;
+    }
+    .header{
+    min-height: 57px;
+    width:100%;
+    /* background: linear-gradient(rgba(4,9,30,0.7),rgba(12, 23, 67, 0.7)); */
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+/*
+nav{
+    
+    padding: 2% 6%;
+    justify-content:space-between;
+    align-items: center;
+    display: flex;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    /* color : grey; */
+
+
+/*
+.nav-links{
+    flex:1;
+    text-align:right;
+}
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position:relative;
+}
+.nav-links ul li a{
+    color : black;
+    text-decoration:none;
+*/
+    /* border: 2px solid black; */
+/*
+    padding: 5px 5px;
+    border-radius: 17px; 
+
+}
+*/
+/* .nav-links ul li a:hover{
+   
+    border: 4px solid orange;
+    color:black;
+    font-weight: bold;
+    background-color: white;
+    
+    
+} */
+/*
+.nav-links ul li::after{
+    content: '';
+    width:0%;
+    height: 3px;
+    background: rgb(1, 247, 132);
+    display:block;
+    margin:auto;
+}
+.nav-links ul li:hover:after{
+    width:85%;
+    height: 4px;
+    transition:1s;
+    color: Black;
+    background-color:rgb(95, 184, 0);
+
+}
+*/
+  .container {
+    max-width: 700px;
+    width: 100%;
+    padding: 30px;
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 36px -5px #094221;
+    margin-top: 37px;
+    /* margin-left: 520px; */
+    }
+
+    .wrapper {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    }
+
+    .wrapper .text-input {
+    display: block;
+    }
+
+    .text-input .to-text {
+    border-radius: 0px;
+    border-top: 1px solid #ccc;
+    }
+
+    .text-input textarea {
+    height: 250px;
+    width: 100%;
+    border: none;
+    outline: none;
+    resize: none;
+    background: none;
+    font-size: 18px;
+    padding: 10px 15px;
+    border-radius: 0.3rem;
+    }
+
+    .text-input textarea::placeholder {
+    color: #b7b6b6;
+    }
+
+    .controls,
+    li,
+    .icons,
+    .icons ion-icon {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    }
+
+    .controls {
+    list-style: none;
+    padding: 12px 15px;
+    border-top: 1px solid #ccc;
+    }
+
+    .controls .row .icons {
+    width: 38%;
+    }
+
+    .controls .row .icons ion-icon {
+    width: 50px;
+    color: #adadad;
+    font-size: 1.7rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    justify-content: center;
+    }
+    .controls .row.from .icons {
+    padding-right: 15px;
+    border-right: 1px solid #ccc;
+    }
+    .controls .row.to .icons {
+    padding-left: 15px;
+    border-left: 1px solid #ccc;
+    }
+    .controls .row select {
+    color: #333;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    background: none;
+    padding-left: 5px;
+    }
+    .text-input textarea::-webkit-scrollbar {
+    width: 4px;
+    }
+    .controls .row select::-webkit-scrollbar {
+    width: 8px;
+    }
+    .text-input textarea::-webkit-scrollbar-track,
+    .controls .row select::-webkit-scrollbar-track {
+    background: #fff;
+    }
+    .text-input textarea::-webkit-scrollbar-thumb {
+    background: #ddd;
+    border-radius: 8px;
+    }
+    .controls .row select::-webkit-scrollbar-thumb {
+    background: #999;
+    border-radius: 8px;
+    border-right: 2px solid #ffffff;
+    }
+    .controls .exchange {
+    color: #adadad;
+    cursor: pointer;
+    font-size: 1.7rem;
+    transition: transform 0.2s ease;
+    }
+    .controls ion-icon:active {
+    transform: scale(0.9);
+    }
+    .container button {
+    width: 100%;
+    padding: 14px;
+    outline: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    border-radius: 0.3rem;
+    background: #333333;
+    }
+
+    @media (max-width: 660px) {
+    .container {
+        padding: 20px;
+    }
+    .wrapper .text-input {
+        flex-direction: column;
+    }
+    .text-input .to-text {
+        border-left: 0px;
+        border-top: 1px solid #ccc;
+    }
+    .text-input textarea {
+        height: 200px;
+    }
+    .controls .row .icons {
+        display: inline-flex;
+        flex-direction: column;
+    }
+    .container button {
+        padding: 13px;
+        font-size: 1.2rem;
+    }
+    .controls .row select {
+        font-size: 1.2rem;
+    }
+    .controls .exchange {
+        font-size: 1.2rem;
+    }
+    }
+    @media screen and (max-width: 1250px) {
+    .container {
+        zoom: 0.7;
+    }
+    }
+  
+  .continue {
+    filter: blur(1px);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+    border: 2px solid white;
+    color: white;
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    font-size: 1rem;
+    padding: 1rem 2rem;
+    box-shadow: 0 0 15px white inset;
+    /* z-index:4; */
+    cursor: pointer;
+    background: linear-gradient(90deg, transparent 33%, white 34%, transparent 35%, transparent 65%, white 66%, transparent 67%);
+    background-size: 300%;
+    background-position: left;
+    transition: all .5s;
+    animation: opacity 2s 7s forwards 1;
+    opacity: 0;
+    &:hover {
+      background-position: right;
+      color: green;
+      filter: blur(0);
+    }
+  }
+  
+  .right-vert-line {
+    position: absolute;
+    background: linear-gradient(transparent, green);
+    opacity: 1;
+    top: 0;
+    bottom: 0;
+    right: -5%;
+    width: 2px;
+    animation: moveToLeft 2s 1s forwards ease-in-out;
+    filter: blur(1px);
+  }
+  
+  .left-vert-line {
+    position: absolute;
+    background: linear-gradient(green, transparent);
+    opacity: 1;
+    top: 0;
+    bottom: 0;
+    right: 105%;
+    width: 2px;
+    animation: moveToRight 2s 1s forwards ease-in-out;
+    filter: blur(1px);
+  }
+  
+  /* /////////////////////////////////////////////////////////
+  ////////////////// KEYFRAMES SECTION////////////////////
+  /////////////////////////////////////////////////////// */
+  @keyframes moveToLeft {
+    from {
+      right: 0%;
+    }
+    50% {
+      opacity: .3;
+    }
+    to {
+      right: 100%;
+      opacity: 0;
+    }
+  }
+  
+  @keyframes moveToRight {
+    from {
+      right: 100%;
+    }
+    50% {
+      opacity: .3;
+    }
+    to {
+      right: 0%;
+      opacity: 0;
+    }
+  }
+  
+  @keyframes scale {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.2);
+      opacity: 0.9;
+    }
+  }
+  
+  @keyframes opacity {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes backToPosition {
+    to {
+      left: 0;
+      top: 0;
+      /* box-shadow:0 20px 10px -10px white; */
+    }
+  }
+  
+  @keyframes rightToLeft {
+    0% {
+      opacity: 0;
+      transform: translate(-35%, 0) scale(2)
+    }
+    10% {
+      opacity: .01;
+    }
+    50% {
+      opacity: .5;
+    }
+    90% {
+      opacity: .01;
+    }
+    100% {
+      transform: translate(-65%, 0) scale(2);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes moveTop {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      top: -100%;
+      bottom: 100%;
+      opacity:0;
+    }
+  }
+  
+  /* if color of text is 'transparent' the opacity of text is controled by blur property of text-shadow */
+  @keyframes textShadow {
+    from {
+      text-shadow: 10px 0px 2px rgba(#fff, 0.5);
+      filter: blur(0px);
+    }
+    to {
+      text-shadow: 5px 0px 2px rgba(#fff, 0.5);
+      filter: blur(1px);
+    }
+  }
+  
+  /* ///////////////////////////////////////////////////
+  /////////////////STYLES FOR ICONS/////////////////
+  ////////////////////////////////////////////////// */
+  
+  .fb {
+    justify-content: flex-end;
+    transition: color .4s;
+    &:before {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+      left: 100%;
+      bottom: 0;
+      background: #405CA1;
+      transition: left .4s;
+      z-index: -1;
+      border-right: 1px solid rgba(black, 0.4);
+    }
+    &:hover {
+      color: white;
+      &:before {
+        left: 0;
+      }
+    }
+  }
+  
+  .git {
+    justify-content: flex-start;
+    transition: color .4s;
+    &:before {
+      content: '';
+      position: absolute;
+      right: 100%;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      background: #24292E;
+      transition: right .4s;
+      z-index: -1;
+    }
+    &:hover {
+      color: white;
+      &:before {
+        right: 0;
+      }
+    }
+  }
+  
+  /* ///////////////////////////////////////////////////////
+  ////////////////////OBVIOUS STUFF/////////////////////
+  ////////////////////////////////////////////////////// */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", Lalezar, cursive, sans-serif;
+};
+
+  
+a:link,
+a:active,
+a:visited {
+    color: inherit;
+    text-decoration: none;
+}
+  
+body {
+    height: 100vh;
+    /* background: pink; */
+    font-family: 'Verdana';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

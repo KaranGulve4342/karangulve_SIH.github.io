@@ -1,0 +1,394 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Language Translator</title>
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- <style>
+    * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", Lalezar, cursive, sans-serif;
+    }
+
+    body {
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+    min-height: 100vh;
+    background: #645e69;
+    /* background-image: linear-gradient(rgba(4,9,30,0.7),rgba(5, 13, 46, 0.7)),url(web_bg.jpg); */
+    background-image:url(hack_web_bg.png);
+    background-size:contain;
+    }
+    .header{
+    min-height: 57px;
+    width:100%;
+    /* background: linear-gradient(rgba(4,9,30,0.7),rgba(12, 23, 67, 0.7)); */
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+nav{
+    
+    padding: 2% 6%;
+    justify-content:space-between;
+    align-items: center;
+    display: flex;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    /* color : grey; */
+
+}
+
+.nav-links{
+    flex:1;
+    text-align:right;
+}
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position:relative;
+}
+.nav-links ul li a{
+    color : black;
+    text-decoration:none;
+    /* border: 2px solid black; */
+    padding: 5px 5px;
+    border-radius: 17px; 
+}
+/* .nav-links ul li a:hover{
+   
+    border: 4px solid orange;
+    color:black;
+    font-weight: bold;
+    background-color: white;
+    
+    
+} */
+.nav-links ul li::after{
+    content: '';
+    width:0%;
+    height: 3px;
+    background: rgb(1, 247, 132);
+    display:block;
+    margin:auto;
+}
+.nav-links ul li:hover:after{
+    width:85%;
+    height: 4px;
+    transition:1s;
+    color: Black;
+    background-color:rgb(95, 184, 0);
+
+}
+.container {
+    max-width: 700px;
+    width: 100%;
+    padding: 30px;
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 36px -5px #094221;
+    margin-top: 37px;
+    /* margin-left: 520px; */
+    }
+
+    .wrapper {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    }
+
+    .wrapper .text-input {
+    display: block;
+    }
+
+    .text-input .to-text {
+    border-radius: 0px;
+    border-top: 1px solid #ccc;
+    }
+
+    .text-input textarea {
+    height: 250px;
+    width: 100%;
+    border: none;
+    outline: none;
+    resize: none;
+    background: none;
+    font-size: 18px;
+    padding: 10px 15px;
+    border-radius: 0.3rem;
+    }
+
+    .text-input textarea::placeholder {
+    color: #b7b6b6;
+    }
+
+    .controls,
+    li,
+    .icons,
+    .icons ion-icon {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    }
+
+    .controls {
+    list-style: none;
+    padding: 12px 15px;
+    border-top: 1px solid #ccc;
+    }
+
+    .controls .row .icons {
+    width: 38%;
+    }
+
+    .controls .row .icons ion-icon {
+    width: 50px;
+    color: #adadad;
+    font-size: 1.7rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    justify-content: center;
+    }
+    .controls .row.from .icons {
+    padding-right: 15px;
+    border-right: 1px solid #ccc;
+    }
+    .controls .row.to .icons {
+    padding-left: 15px;
+    border-left: 1px solid #ccc;
+    }
+    .controls .row select {
+    color: #333;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    background: none;
+    padding-left: 5px;
+    }
+    .text-input textarea::-webkit-scrollbar {
+    width: 4px;
+    }
+    .controls .row select::-webkit-scrollbar {
+    width: 8px;
+    }
+    .text-input textarea::-webkit-scrollbar-track,
+    .controls .row select::-webkit-scrollbar-track {
+    background: #fff;
+    }
+    .text-input textarea::-webkit-scrollbar-thumb {
+    background: #ddd;
+    border-radius: 8px;
+    }
+    .controls .row select::-webkit-scrollbar-thumb {
+    background: #999;
+    border-radius: 8px;
+    border-right: 2px solid #ffffff;
+    }
+    .controls .exchange {
+    color: #adadad;
+    cursor: pointer;
+    font-size: 1.7rem;
+    transition: transform 0.2s ease;
+    }
+    .controls ion-icon:active {
+    transform: scale(0.9);
+    }
+    .container button {
+    width: 100%;
+    padding: 14px;
+    outline: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    border-radius: 0.3rem;
+    background: #333333;
+    }
+
+    @media (max-width: 660px) {
+    .container {
+        padding: 20px;
+    }
+    .wrapper .text-input {
+        flex-direction: column;
+    }
+    .text-input .to-text {
+        border-left: 0px;
+        border-top: 1px solid #ccc;
+    }
+    .text-input textarea {
+        height: 200px;
+    }
+    .controls .row .icons {
+        display: inline-flex;
+        flex-direction: column;
+    }
+    .container button {
+        padding: 13px;
+        font-size: 1.2rem;
+    }
+    .controls .row select {
+        font-size: 1.2rem;
+    }
+    .controls .exchange {
+        font-size: 1.2rem;
+    }
+    }
+    @media screen and (max-width: 1250px) {
+    .container {
+        zoom: 0.7;
+    }
+    }
+  </style> -->
+</head>
+
+<body>
+  <!-- <section class="header">
+    <nav>
+        <div class="nav-links">
+            <ul>
+                <li><a href="">HOME</a></li>
+                <li><a href="">ABOUT</a></li>
+                <li><a href="">COURSES</a></li>
+                <li><a href="">BLOG</a></li>
+                <li><a href="">CONTACT</a></li>
+            </ul>
+        </div>
+    </nav>
+</section> -->
+  <div class="container">
+    <div class="wrapper">
+      <div class="text-input">
+        <textarea spellcheck="false" class="from-text" placeholder="Enter text"></textarea>
+        <ul class="controls">
+          <li class="row from">
+            <div class="icons">
+              <ion-icon id="from" name="volume-medium-outline"></ion-icon>
+              <ion-icon id="from" name="copy-outline"></ion-icon>
+            </div>
+            <select></select>
+          </li>
+          <li class="exchange">
+            <ion-icon name="swap-vertical"></ion-icon>
+          <li class="row to">
+            <select></select>
+            <div class="icons">
+              <ion-icon id="to" name="volume-medium-outline"></ion-icon>
+              <ion-icon id="to" name="copy-outline"></ion-icon>
+            </div>
+          </li>
+        </ul>
+        <textarea spellcheck="false" readonly disabled class="to-text" placeholder="Translation"></textarea>
+      </div>
+    </div>
+    <button>Translate it</button>
+  </div>
+<script>
+  const languages = {
+  "bn-IN": "Bengali",
+  "or-IN": "Odia",
+  "mr-IN": "Marathi",
+  "en-GB": "English",
+  "gu-IN": "Gujarati",
+  "hi-IN": "Hindi",
+  "kn-IN": "Kannada",
+  "ms-MY": "Malay",
+  "ne-NP": "Nepali",
+  "pa-IN": "Panjabi",
+  "si-LK": "Sinhala",
+  "ta-LK": "Tamil",
+  "te-IN": "Telugu",
+  "ur-IN": "Urdu",
+  "sa-IN": "Sanskrit",
+};
+
+const fromText = document.querySelector(".from-text"),
+  toText = document.querySelector(".to-text"),
+  exchageIcon = document.querySelector(".exchange"),
+  selectTag = document.querySelectorAll("select"),
+  icons = document.querySelectorAll(".row ion-icon");
+(translateBtn = document.querySelector("button")),
+  selectTag.forEach((tag, id) => {
+    for (let lang_code in languages) {
+      let selected =
+        id == 0
+          ? lang_code == "en-GB"
+            ? "selected"
+            : ""
+          : lang_code == "fa-IR"
+          ? "selected"
+          : "";
+      let option = `<option ${selected} value="${lang_code}">${languages[lang_code]}</option>`;
+      tag.insertAdjacentHTML("beforeend", option);
+    }
+  });
+
+fromText.addEventListener("keyup", () => {
+  if (!fromText.value) {
+    toText.value = "";
+  }
+});
+
+translateBtn.addEventListener("click", () => {
+  let text = fromText.value.trim(),
+    translateFrom = selectTag[0].value,
+    translateTo = selectTag[1].value;
+  if (!text) return;
+  toText.setAttribute("placeholder", "Translating...");
+  let apiUrl = `https://api.mymemory.translated.net/get?q=${text}&langpair=${translateFrom}|${translateTo}`;
+  fetch(apiUrl)
+    .then((res) => res.json())
+    .then((data) => {
+      toText.value = data.responseData.translatedText;
+      data.matches.forEach((data) => {
+        if (data.id === 0) {
+          toText.value = data.translation;
+        }
+      });
+      toText.setAttribute("placeholder", "Translation");
+    });
+});
+
+exchageIcon.addEventListener("click", () => {
+  let tempText = fromText.value,
+    tempLang = selectTag[0].value;
+  fromText.value = toText.value;
+  toText.value = tempText;
+  selectTag[0].value = selectTag[1].value;
+  selectTag[1].value = tempLang;
+});
+
+icons.forEach((icon) => {
+  icon.addEventListener("click", ({ target }) => {
+    if (!fromText.value || !toText.value) return;
+    if (target.getAttribute("name") == "copy-outline") {
+      if (target.id == "from") {
+        navigator.clipboard.writeText(fromText.value);
+      } else {
+        navigator.clipboard.writeText(toText.value);
+      }
+    } else {
+      let utterance;
+      if (target.id == "from") {
+        utterance = new SpeechSynthesisUtterance(fromText.value);
+        utterance.lang = selectTag[0].value;
+      } else {
+        utterance = new SpeechSynthesisUtterance(toText.value);
+        utterance.lang = selectTag[1].value;
+      }
+      speechSynthesis.speak(utterance);
+    }
+  });
+});
+</script>
+</body>
+
+</html>
